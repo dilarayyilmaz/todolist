@@ -1,3 +1,4 @@
+from datetime import datetime # import ekledim
 import json
 import os
 
@@ -44,6 +45,8 @@ def todo_list():
                 print("Task not found in the list.")
 
         elif choice == "3":
+            from datetime import datetime
+            tasks.sort(key=lambda x: datetime.strptime(x["date"], "%Y-%m-%d")) #tarihe göre sıralama ekledim
             print("\nTask List:")
             if not tasks:
                 print("The list is empty.")
